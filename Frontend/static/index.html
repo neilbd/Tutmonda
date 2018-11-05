@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<head>
+		<title>Tutmonda</title>
+		<meta content="width=device-width, user-scalable=no" name="viewport"/>
+		<link href="./static/worldly_style.css" rel="stylesheet"/>
+		<link rel="icon" href="./static/images/mondite.png"/>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+	</head>
+
+	<body>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://code.angularjs.org/1.6.0/angular.min.js"></script>
+		<script src="https://code.angularjs.org/1.6.0/angular-route.min.js"></script>
+
+		<script src="./static/app.js"></script>
+
+		<div class="logo">
+			<img alt="Tutmonda" src="./static/images/tutmonda_logo.png"></img>
+		</div>
+
+		<div class="about">
+			<h2>Welcome to Tutmonda!</h2>
+		</div>
+		<div class="description">
+			<p>In this hectic world, it's difficult to keep track of several of the world's pressing issues. Tutmonda attempts to solve that problem. It focuses on retrieving the most recent articles of specific worldly topics, making sure that they have the consistent coverage they deserve. Thank you for using this website, and we hope that Tutmonda is valuable to you!</p>
+			<p class="disclaimer">*Tutmonda is Esperanto for "Worldwide"</p>
+		</div>
+
+		<div class="container" ng-app="tutApp" ng-controller="Controller">
+			<div id="column1" >
+				<div ng-repeat="news in news_col_one">
+					<h4>{{news['name']}}</h4>
+					<div ng-repeat="links in news['links']">
+						<ul>
+							<li>
+								<a href={{links[1]}}>{{links[0]}}</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div id="column2">
+				<div ng-repeat="news in news_col_two">
+					<h4>{{news['name']}}</h4>
+					<div ng-repeat="links in news['links']">
+						<ul>
+							<li>
+								<a href={{links[1]}}>{{links[0]}}</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
